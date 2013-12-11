@@ -8,16 +8,16 @@
     <a href="https://support.mozilla.org/products/firefox-os/marketplace" target="_blank">{{ _('Support') }}</a>
   </div>
   <div class="language group links">
-    <span class="region region-{{ user.get_setting('region', 'worldwide') }}">
-      {{ REGIONS[user.get_setting('region', 'worldwide')] }}</span>
+    <a href="/settings" rel="external" class="region region-{{ user_helpers.region('worldwide') }}">
+      {{ REGIONS[user.get_setting('region', 'worldwide')] }}</a>
     {% if user.get_permission('developer') %}
-      <a href="/developers/submissions">{{ _('My Submissions') }}</a>
+      <a href="/developers/submissions" rel="external">{{ _('My Submissions') }}</a>
     {% endif %}
     {% if user.get_permission('reviewer') %}
-      <a href="/reviewers/apps/queue/" class="only-logged-in">{{ _('Reviewer Tools') }}</a>
+      <a href="/reviewers/apps/queue/" rel="external" class="only-logged-in">{{ _('Reviewer Tools') }}</a>
     {% endif %}
     {% if user.get_permission('lookup') %}
-      <a href="/lookup/" class="only-logged-in">{{ _('Lookup Tool') }}</a>
+      <a href="/lookup/" rel="external" class="only-logged-in">{{ _('Lookup Tool') }}</a>
     {% endif %}
   </div>
 </div>
@@ -31,8 +31,8 @@
     </p>
     <ul>
       <li><a href="https://marketplace.firefox.com/privacy-policy">{{ _('Privacy Policy') }}</a></li>
-      <li><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Terms of Use') }}</a></li>
-      <li><a href="http://mozilla.com/legal/fraud-report/index.html" target="_blank">
+      <li><a href="https://marketplace.firefox.com/terms-of-use"> {{ _('Terms of Use') }}</a></li>
+      <li><a href="https://www.mozilla.org/legal/fraud-report/index.html" target="_blank">
         {{ _('Report Trademark Abuse') }}</a></li>
     </ul>
   </div>
